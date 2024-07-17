@@ -8,7 +8,7 @@ namespace AwsApi.Controllers
     {
         private static readonly string[] Summaries = new[]
         {
-       "Orion", "Phoenix", "Zephyr", "Lyra", "Vega", "Nova", "Cygnus", "Draco", "Andromeda", "Perseus"
+       "arion", "ahoenix", "aephyr", "ayra", "aega", "aova", "aygnus", "araco", "andromeda", "aerseus"
     };
 
         private readonly ILogger<WeatherForecastController> _logger;
