@@ -8,7 +8,7 @@ namespace AwsApi.Controllers
     {
         private static readonly string[] Summaries = new[]
         {
-        "Hello", "Kohamada", "Koheda", "Innee", "Hiii", "Kohomada", "koheda", "Inne", "HOOO", "HOOO"
+       "Welcome", "Greetings", "Hola", "Bonjour", "Hiya", "Salutations", "Howdy", "Hey", "Yo", "Aloha"
     };
 
         private readonly ILogger<WeatherForecastController> _logger;
