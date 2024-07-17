@@ -1,7 +1,7 @@
 # This workflow will build a .NET project
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
 
-name: .NET
+name: .NET Build and Deploy
 
 on:
   push:
@@ -10,16 +10,21 @@ on:
     branches: [ "master" ]
 
 jobs:
-  build:
-
+  build-and-deploy:
     runs-on: self-hosted
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: 6.0.x
-    - name: Restore dependencies
-      run: dotnet restore
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Build and Publish
+      run: |
+        dotnet build --configuration Release --no-restore
+        dotnet publish --configuration Release --output ./publish
+
+    - name: Deploy to Server
+      run: |
+        # Replace with your deployment commands (e.g., copy files, restart service)
+        scp -r ./publish/* user@your-server:/path/to/deployment/
+        ssh user@your-server 'sudo systemctl restart your-app.service'
 
