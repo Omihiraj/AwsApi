@@ -19,12 +19,8 @@ jobs:
 
     - name: Build and Publish
       run: |
-        dotnet build --configuration Release --no-restore
-        dotnet publish --configuration Release --output ./publish
+        #dotnet build --configuration Release --no-restore
+        #dotnet publish --configuration Release --output ./publish
 
-    - name: Deploy to Server
-      run: |
-        # Replace with your deployment commands (e.g., copy files, restart service)
-        scp -r ./publish/* user@your-server:/path/to/deployment/
-        ssh user@your-server 'sudo systemctl restart your-app.service'
+
 
