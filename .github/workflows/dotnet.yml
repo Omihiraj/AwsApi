@@ -21,6 +21,9 @@ jobs:
       run: |
         dotnet build
         dotnet publish --output ./publish20
+    - name: Restart Service 
+      run: |
+         sudo systemctl restart AwsApi.service
 
 
 
